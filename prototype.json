@@ -1,0 +1,72 @@
+{
+    "products": [
+      {
+        "name": "Brembo Brake Pad|B4-078773",
+        "image_src": "AutoParts/BrakePads/BremboPad(B14-078773)/DSCF1086.PNG",
+        "price": "₱3,000.00",
+        "function": "document.location='BremboBrake.html'"
+      },
+      {
+        "name": "Bendix Brake Pad | DB 1943 GCT",
+        "image_src": "AutoParts/BrakePads/Bendix(DB 1943 GCT)/DSCF1078.png",
+        "price": "₱2,500.00",
+        "function": "document.location='BendixBrake1943.html'"
+      },
+      {
+        "name": "Bendix Brake Pad | DB 1252 GCT",
+        "image_src": "AutoParts/BrakePads/Bendix(DB 1252 GCT)/DSCF1072.PNG",
+        "price": "₱3,000.00",
+        "function": "document.location='BendixBrake.html'"
+      }
+    ],
+
+    "OilandOilFilters" : [
+
+        {
+            "name": "VIC Oil Filter | C-109",
+            "image_src": "AutoParts/OilFilter/C-109/DSCF1018.png",
+            "price": "₱3,000.00",
+            "function": "document.location='OilFilterC109.html'"
+          },
+          {
+            "name": "SAKURA Oil Filter Heavy Duty | C-1009 ",
+            "image_src": "AutoParts/OilFilter/C-1506/DSCF1009.png",
+            "price": "₱2,500.00",
+            "function": "document.location='OilFilter1506.html'"
+          },
+          {
+            "name": "VIC Oil Filter | C-509A ",
+            "image_src": "AutoParts/OilFilter/C-509A/DSCF1014.png",
+            "price": "₱3,000.00",
+            "function": "document.location='OilFilterC509A.html'"
+          },
+
+          {
+            "name": "Caltex Havoline SF Engine Oil | SAE 20W - 40",
+            "image_src": "AutoParts/Oil/EngineOil/Caltex-Havoline-SF Engine oil/DSCF1090.png",
+            "price": "₱3,000.00",
+            "function": "document.location='OilSFEngine.html'"
+          },
+          {
+            "name": "Caltex-Super Diesel Oil",
+            "image_src": "AutoParts/Oil/EngineOil/Caltex-Super Diesel Oil/DSCF1088.png",
+            "price": "₱2,500.00",
+            "function": "document.location='OilSuperDieselOil.html'"
+          },
+          {
+            "name": "Caltex Delo Gold | 15W-40",
+            "image_src": "AutoParts/Oil/EngineOil/Delo Gold-15W-40/DSCF1092.png",
+            "price": "₱3,000.00",
+            "function": "document.location='OilDeloGold.html'"
+          },
+          {
+            "name": "Caltex Havoline Multi Vehicle | Full Synthetic",
+            "image_src": "AutoParts/Oil/EngineOil/Havoline-Full Synthetic Multi Vehicle/DSCF1094.png",
+            "price": "₱3,000.00",
+            "function": "document.location='OilMultiVehicle.html'"
+          }
+
+
+    ]
+
+  }

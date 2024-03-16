@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOYOZU Inc. | Parts for Cars and Trucks</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="Header">
+        <div class="LeftSectionSC">
+            <button class="ToyozuLogo" onclick="document.location='index.html'"><img class="ToyozuLogo" src="icons/Toyozu Logo.png"></button>
+        </div>
+        <div class="LeftNavSC">
+            <span class="HeaderLabel">Shopping Cart </span>
+        </div>
+        <div class="MiddleSectionSC">
+            
+        </div>
+    </div>
+
+    <div class="CartTab">
+        <h2 >CART</h2>
+        <div class="ListCart">
+            <div class="labels">
+                <div >Image</div>
+                <div>Name</div>
+                <div >Price</div>
+                <div>Quantity</div>
+                <div>Total price</div>
+                <div>Delete</div>
+            </div>
+        </div>
+
+        <div class="Buttons">
+            <button class="CheckOut">Check Out</button>
+        </div>        
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const cartItemsDiv = document.querySelector('.ListCart');
+            let totalPrice = 0;
+        
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            
+         
+            cart.forEach(function(item) {
+                const cartItemDiv = document.createElement('div');
+                cartItemDiv.classList.add('CartItem');
+                const itemPrice = parseFloat(item.price.replace('₱', '').replace(',', ''));
+                const itemTotalPrice = itemPrice * parseInt(item.quantity);
+                totalPrice += itemTotalPrice;
+                cartItemDiv.innerHTML = `
+                    <div><img src="${item.img}"></div>
+                    <div><p>${item.name}</p></div>
+                    <div ><p>${item.price}</p></div>
+                    <div><p>${item.quantity}</p></div>
+                    <div ><p>₱${itemTotalPrice.toFixed(2)}</p></div>
+                    <button style="border:none; background-color:transparent; cursor:pointer;" class="DeleteItem">
+                    <img class="GarbageIcon" style="width:20px; border:none;"src="icons/Garbage.png">
+                    </button>
+                `;
+                cartItemsDiv.appendChild(cartItemDiv);
+            });
+               
+            
+            const totalPriceDiv = document.createElement('div');
+            totalPriceDiv.innerHTML = `<p>Total Price: ₱${totalPrice.toFixed(2)}</p>`;
+            document.querySelector('.Buttons').appendChild(totalPriceDiv);
+    
+            
+            const deleteButtons = document.querySelectorAll('.DeleteItem');
+            deleteButtons.forEach(function(button, index) {
+                button.addEventListener('click', function() {
+                    cart.splice(index, 1); 
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                    location.reload(); 
+                });
+            });
+    
+           
+
+        });
+        document.addEventListener("DOMContentLoaded", function() {
+       
+            
+            const checkoutButton = document.querySelector('.CheckOut');
+            checkoutButton.addEventListener('click', function() {
+          
+                const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+                
+                
+                localStorage.setItem('checkoutCart', JSON.stringify(cartItems));
+                
+                document.location = 'Checkout.html';
+            });
+        });
+        document.addEventListener('clearCart', function() {
+          
+            localStorage.removeItem('cart');
+            
+            const cartItemsDiv = document.querySelector('.ListCart');
+            cartItemsDiv.innerHTML = ''; 
+        });
+
+
+    </script>
+</body>
+</html>

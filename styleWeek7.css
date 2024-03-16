@@ -1,0 +1,72 @@
+body {
+    Background-color: PowderBlue;
+    font-family: 'Roboto', sans-serif; 
+    padding-bottom: 1000px;
+    
+}
+
+.header {
+    height: 117px;
+    display: flex;
+    flex-direction: row;
+    background-color: aqua; 
+    top:0;
+    position: fixed;
+    width: 100%;
+    border-radius: 15px;
+}
+.leftsection {
+    background-color: aqua;
+    width: 200px;
+    align-items:center;
+    display: flex;
+    margin-left: 340px;
+    margin-right: 50px;
+    text-align: left;
+}
+.middlesection {
+    background-color: aqua;
+    width: 850px;
+    display:flex;
+    align-items: center;
+    text-align: center;
+   
+}
+.Navigation {
+    margin-left: 350px;
+    text-align: center;
+    display:flex;
+}
+.Display, .SneakerContents{
+    Width:500;
+    background-color: White;
+    text-align: center;
+    margin-left: 340px;
+    margin-right: 400px;
+    border-radius: 15px;
+
+}
+.gif {
+    margin-top: 150px;
+    justify-content: center;
+    margin-left: 650px;
+
+}
+.HomeContents, .AboutUsContents, .ContactUsContents, .Top5Sneakers {
+    text-align: left;
+    margin-left: 15px;
+}
+.IndentedParagraph {
+    text-indent: 40px;
+}
+.Logo {
+    width:120px;
+}
+.SneakerPic, .AboutUsPic, .ContactUs {
+    Margin-top: 20px;
+}
+.OverratedSneakers {
+    margin-top:50px;
+}
+
+

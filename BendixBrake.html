@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOYOZU Inc. | Parts for Cars and Trucks</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="Header">
+        <div class="LeftSection">
+            <button class="ToyozuLogo" onclick="document.location='index.html'"><img class="ToyozuLogo" src="icons/Toyozu Logo.png"></button>
+        </div>
+        <div class="LeftNav">
+          
+        </div>
+        <div class="MiddleSection">
+          
+        </div>
+        <div class="RightSection">
+           
+            <div class="ShoppingCartLogo">
+                <button class="CartLogo" onclick="document.location='ShoppingCart.html'"> <img class="CartLogo"src="icons/ShoppingCartLogo.png"></button>
+
+            </div>
+           
+        </div>
+    </div>
+
+    <div class="ProductContents">
+        <div class="Contents">
+            <div class="ItemImage">
+                <img class="ProductImg" src="AutoParts/BrakePads/Bendix(DB 1252 GCT)/DSCF1070.png" xoriginal="AutoParts/BrakePads/Bendix(DB 1252 GCT)/DSCF1070.png">
+            </div>
+            <div class="ZoomThumbs">
+                <a href="AutoParts/BrakePads/Bendix(DB 1252 GCT)/DSCF1070.png">
+                    <img class="ZoomGallery" src="AutoParts/BrakePads/Bendix(DB 1252 GCT)/DSCF1070.png">
+                </a>
+                <a href="AutoParts/BrakePads/Bendix(DB 1252 GCT)/DSCF1072.png">
+                    <img class="ZoomGallery" src="AutoParts/BrakePads/Bendix(DB 1252 GCT)/DSCF1072.png">
+                </a>
+                <a href="AutoParts/BrakePads/Bendix(DB 1252 GCT)/DSCF1073.png">
+                    <img class="ZoomGallery" src="AutoParts/BrakePads/Bendix(DB 1252 GCT)/DSCF1073.png">
+                </a>
+                <a href="AutoParts/BrakePads/Bendix(DB 1252 GCT)/DSCF1074.png">
+                    <img class="ZoomGallery" src="AutoParts/BrakePads/Bendix(DB 1252 GCT)/DSCF1074.png">
+                </a>
+                <a href="AutoParts/BrakePads/Bendix(DB 1252 GCT)/DSCF1071.png">
+                    <img class="ZoomGallery" src="AutoParts/BrakePads/Bendix(DB 1252 GCT)/DSCF1071.png">
+                </a>
+            </div>
+        </div>
+        <form class="Description">
+            <div class="item" id="Name">
+                <h1>Bendix Brake Pad | DB 1252 GCT</h1>
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Asperiores aspernatur inventore nesciunt recusandae, 
+                facilis cupiditate consequatur eveniet illo temporibus quas deserunt 
+                fugiat deleniti ad molestias voluptatum nobis et quisquam vitae.
+            </p>
+            <div class="Vehicle Fitment" style="margin-bottom:100px;">
+                <table>
+                    <tr>
+                      <th style="font-weight: bold;">Vehicle Fitment</th>
+                    </tr>
+                    <tr>
+                      <td>Accent</td>
+                    </tr>
+                    <tr>
+                      <td>Elantra</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="Price" style="Color: #e91e26; font-weight: bold; font-size: 25px;">
+                ₱<span style="Color: #e91e26; font-weight: bold; font-size: 25px;">2500</span>
+            </div>
+            <div class="Quantity">
+                <span class="decrease">-</span>
+                <input type="text" class="value" value="1">
+                <span class="increase">+</span>
+            </div>
+            
+            <div>
+                
+                <button class="Cart" type="submit">
+                    Add to Cart
+                </button>
+            </div>
+        </form>
+    </div>
+    <script src="script.js"></script>
+    <script src="xzoom.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const addToCartBtn = document.querySelector('.Cart');
+            
+            addToCartBtn.addEventListener('click', function(event) {
+                event.preventDefault(); 
+                
+                
+                const productImg = document.querySelector('.ProductImg').src;
+                const productName = document.querySelector('.Description #Name h1').textContent;
+                const productPrice = document.querySelector('.Price span').textContent;
+                const productQuantity = document.querySelector('.Quantity .value').value;
+                
+            
+                const product = {
+                    img: productImg,
+                    name: productName,
+                    price: productPrice,
+                    quantity: productQuantity
+                };
+                
+                
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                
+              
+                cart.push(product);
+                
+                
+                localStorage.setItem('cart', JSON.stringify(cart));
+                
+            });
+        });
+    </script>
+</body>
+</html>

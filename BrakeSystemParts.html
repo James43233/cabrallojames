@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOYOZU Inc. | Parts for Cars and Trucks</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="Header">
+        <div class="LeftSection">
+            <button class="ToyozuLogo" onclick="document.location='index.html'"><img class="ToyozuLogo" src="icons/Toyozu Logo.png"></button>
+            
+        </div>
+        <div class="LeftNav">
+          
+        </div>
+        <div class="MiddleSection">
+          
+        </div>
+        <div class="RightSection">
+          
+            <div class="ShoppingCartLogo">
+                <button class="CartLogo" onclick="document.location='ShoppingCart.html'"> <img class="CartLogo"src="icons/ShoppingCartLogo.png"></button>
+            
+            </div>
+          
+        </div>
+    </div>
+    <div class="ListProductHeader">
+        <h2>AutoParts Toyozu Brake Systems</h2>
+    </div>
+    <div class="ProductsContainer">
+        <div class="ListProducts">
+        </div>    
+    </div>
+    <script>
+        let listProductHTML = document.querySelector('.ListProducts');
+
+        let products = [];
+
+        const addDataToHTML = () => {
+            if(products.length > 0) {
+                products.forEach(product => {
+                    let newProduct = document.createElement('div');
+                    newProduct.dataset.id = product.id;
+                    newProduct.classList.add('item');
+                    newProduct.innerHTML = 
+                    `<button onclick="${product.function}">
+                        <img src="${product.image_src}">
+                        <span class="span1">${product.name}</span>
+                        <span class="span2">${product.price}</span>
+                    </button>`
+                    listProductHTML.appendChild(newProduct);
+                });
+            }
+        }
+
+        const initApp = () => {
+        
+            fetch('prototype.json')
+            .then(response => response.json())
+            .then(data => {
+                products = data.products; 
+                addDataToHTML();
+            });
+        }
+
+        initApp();
+    </script>
+</body>
+</html>

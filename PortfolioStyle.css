@@ -1,0 +1,44 @@
+.Header {
+    height: 117px;
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    margin-top: 0;
+    max-width: 100%; 
+    width: 100%;
+    margin: 0 auto;
+    overflow-x: hidden; 
+    justify-content: center; 
+}
+
+.LeftSection, .MiddleSection, .RightSection {
+    flex: 1;
+    text-align: center;
+    width: 200px;
+    justify-content: center;
+    display:flex;
+}
+
+
+.LeftSection img {
+    width: 150px;
+}
+body {
+    margin-left: 100px;
+    margin-right: 100px;
+}
+.Buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh; 
+}
+
+.Buttons > div {
+    text-align: center;
+}
+
+.Buttons button {
+    font-size: 20px; 
+    padding: 10px 20px; 
+}
